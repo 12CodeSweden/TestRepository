@@ -19,7 +19,13 @@ namespace WindowsFormsTestApplication
 
         private void buttonHello_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello " + this.textBoxName.Text);
+            if (this.textBoxName.Text != string.Empty)
+                MessageBox.Show("Hello " + this.textBoxName.Text);
+            else
+            {
+                MessageBox.Show("Enter your name!");
+                this.textBoxName.Focus();
+            }
         }
     }
 }
